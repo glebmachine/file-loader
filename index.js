@@ -14,6 +14,7 @@ module.exports = function(content) {
 		content: content,
 		regExp: query.regExp
 	});
+	if (query.prefix) url = query.prefix+url;
 	this.emitFile(url, content);
 	return "module.exports = __webpack_public_path__ + " + JSON.stringify(url);
 }
